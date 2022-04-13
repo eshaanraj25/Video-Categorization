@@ -1,0 +1,42 @@
+<html>
+<head>
+	
+</head>
+<style>
+body {
+	background: linear-gradient(90deg, rgba(151,222,103,1) 0%, rgba(88,207,94,1) 35%, rgba(82,179,80,1) 100%);
+}
+
+.center {
+  font-size: 20px;
+  text-align: center;
+  line-height: 2.5;
+  height: 100%;
+}
+ul{
+padding-left: 0;
+  list-style-position: inside;
+}
+p{
+display: inline;
+}
+</style>
+<body>
+<div class="center">
+<ul>
+{% for item in data %}
+    <li><p>Is Is this Video NSFW (Not Safe for Work?)  {{item.NSFW}}</p></li>
+    <li><p>NSFW Score: {{item.nsfw_score}}</p></li>
+    <p>Audio sentiment analysis score: </p>
+    <li><p>Abusive: {{item.audio_score.abusive}}</p></li>
+    <li><p>Hate Speech: {{item.audio_score.hate_speech}}</p></li>
+    <li><p>Neither: {{item.audio_score.neither}}</p></li>   
+{% endfor %}
+</ul>
+<br><br>
+AGE CATEGORY of VIDEO: {{category}}
+</div>
+</body>
+
+
+</html>
